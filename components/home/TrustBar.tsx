@@ -89,7 +89,7 @@ const STATS = [
 
 export default function TrustBar() {
   return (
-    <section className="cw-root bg-white text-[var(--cw-ink)]">
+    <section className="cw-root bg-white text-[var(--cw-ink)] min-h-screen flex flex-col justify-center">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap');
 

@@ -8,6 +8,7 @@ import {
   X,
   Phone,
   BriefcaseBusiness,
+  ArrowUpRight,
 } from "lucide-react";
 
 const services = [
@@ -35,277 +36,356 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
-    onScroll(); // set initial state
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Dynamic classes based on scroll position
-  const navText   = scrolled ? "text-slate-700" : "text-slate-200";
-  const navHover  = scrolled ? "hover:text-slate-900" : "hover:text-white";
-  const logoTitle = scrolled ? "text-slate-900"  : "text-white";
-  const logoSub   = scrolled ? "text-slate-500"  : "text-slate-300";
-  const mobileBtn = scrolled ? "text-slate-700 hover:bg-slate-100" : "text-white hover:bg-white/10";
-  const boxBg     = scrolled ? "bg-white shadow-md border-slate-200" : "bg-black/10 border-white/20";
+  const navText = scrolled ? "nav-link-dark" : "nav-link-light";
+  const logoTitle = scrolled ? "#1C1410" : "#ffffff";
+  const logoSub = scrolled ? "#6B5D52" : "rgba(255,255,255,0.65)";
+  const mobileBtn = scrolled ? "mob-btn-dark" : "mob-btn-light";
+  const boxBg = scrolled ? "nav-box-scrolled" : "nav-box-top";
 
   return (
     <>
-    {/* Full-screen backdrop — sits behind header (z-40) so header stays on top */}
-    {mobileOpen && (
-      <div
-        className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden"
-        onClick={() => setMobileOpen(false)}
-      />
-    )}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
-    <header className="fixed top-0 z-50 w-full bg-transparent py-4 px-4">
-      {/* Enclosed Navbar Box with transparent backdrop, borders, and rounded ends */}
-      <div className={`mx-auto flex h-20 max-w-[1440px] items-center justify-between rounded-2xl border backdrop-blur-md px-6 transition-all duration-300 ${boxBg}`}>
-        
-        {/* Logo */}
-        <Link href="/" className="group flex items-center gap-3 shrink-0">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange-400 text-white shadow-md shadow-orange-400/20 transition-transform duration-300 group-hover:scale-105">
-            <BriefcaseBusiness className="h-5 w-5" />
-          </div>
+        .nav-root {
+          --cw-orange: #EA5B0C;
+          --cw-orange-deep: #B6430A;
+          --cw-orange-light: #FFE4CC;
+          --cw-line: #F0DFC9;
+          --cw-ink: #1C1410;
+          --cw-ink-soft: #6B5D52;
+          font-family: 'Inter', sans-serif;
+        }
+        .nav-logo-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+        .nav-logo-sub  { font-family: 'Inter', sans-serif; font-weight: 500; }
 
-          <div>
-            <h2 className={`text-[15px] font-bold tracking-tight transition-colors duration-300 ${logoTitle}`}>
-              Blitz
-            </h2>
-            <p className={`-mt-0.5 text-[13px] font-medium uppercase tracking-wider transition-colors duration-300 ${logoSub}`}>
-              Immigration
-            </p>
-          </div>
-        </Link>
+        /* nav pill box */
+        .nav-box-top      { background: rgba(0,0,0,0.12); border-color: rgba(255,255,255,0.2); }
+        .nav-box-scrolled { background: #fff; border-color: var(--cw-line); box-shadow: 0 2px 12px rgba(28,20,16,0.08); }
 
-        {/* Desktop Menu */}
-        <nav className="hidden items-center gap-8 lg:flex">
-          {/* <Link
-            href="/"
-            className={`relative text-sm font-medium transition-colors duration-200 ${navText} ${navHover} after:absolute after:bottom-[-6px] after:left-0 after:h-[2px] after:w-0 after:bg-orange-400 after:transition-all hover:after:w-full`}
-          >
-            Home
-          </Link> */}
+        /* desktop links */
+        .nav-link-light { color: rgba(255,255,255,0.85); }
+        .nav-link-dark  { color: var(--cw-ink-soft); }
+        .nav-link-light:hover { color: #fff; }
+        .nav-link-dark:hover  { color: var(--cw-ink); }
 
-          <Link
-            href="/jobs"
-            className={`relative text-sm font-medium transition-colors duration-200 ${navText} ${navHover} after:absolute after:bottom-[-6px] after:left-0 after:h-[2px] after:w-0 after:bg-orange-400 after:transition-all hover:after:w-full`}
-          >
-            Jobs
-          </Link>
+        /* underline indicator */
+        .nav-link-base {
+          position: relative;
+          font-size: 0.875rem;
+          font-weight: 500;
+          transition: color 0.2s;
+          text-decoration: none;
+        }
+        .nav-link-base::after {
+          content: '';
+          position: absolute;
+          bottom: -6px; left: 0;
+          height: 2px; width: 0;
+          background: var(--cw-orange);
+          transition: width 0.2s;
+        }
+        .nav-link-base:hover::after { width: 100%; }
+        .nav-link-base:focus-visible { outline: none; }
+        .nav-link-base:focus-visible::after { width: 100%; }
 
-          <Link
-            href="/countries"
-            className={`relative text-sm font-medium transition-colors duration-200 ${navText} ${navHover} after:absolute after:bottom-[-6px] after:left-0 after:h-[2px] after:w-0 after:bg-orange-400 after:transition-all hover:after:w-full`}
-          >
-            Countries
-          </Link>
+        /* CTA button */
+        .nav-cta {
+          background: var(--cw-orange);
+          color: #fff;
+          font-family: 'Inter', sans-serif;
+          font-weight: 600;
+          font-size: 0.875rem;
+          border-radius: 9999px;
+          padding: 0.5rem 1.25rem;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.375rem;
+          transition: background 0.15s ease;
+          text-decoration: none;
+        }
+        .nav-cta:hover { background: var(--cw-orange-deep); }
+        .nav-cta:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--cw-orange);
+        }
 
-          {/* Services Dropdown */}
-          <div className="group relative py-2">
-            <button className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 ${navText} ${navHover}`}>
-              Services
-              <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
-            </button>
+        /* dropdown items */
+        .nav-dropdown-item {
+          display: block;
+          border-radius: 0.75rem;
+          padding: 0.75rem 1rem;
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: var(--cw-ink-soft);
+          transition: background 0.15s, color 0.15s;
+          text-decoration: none;
+        }
+        .nav-dropdown-item:hover {
+          background: var(--cw-orange-light);
+          color: var(--cw-orange-deep);
+        }
 
-            <div className="invisible absolute left-1/2 top-12 w-72 -translate-x-1/2 translate-y-3 rounded-2xl border bg-white p-2 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-              {services.map((item) => (
-                <Link
-                  key={item}
-                  href="#"
-                  className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-orange-600"
-                >
-                  {item}
-                </Link>
-              ))}
-            </div>
-          </div>
+        /* mobile button */
+        .mob-btn-light { color: #fff; }
+        .mob-btn-light:hover { background: rgba(255,255,255,0.12); }
+        .mob-btn-dark  { color: var(--cw-ink); }
+        .mob-btn-dark:hover  { background: #f5f0eb; }
 
-          {/* Resources Dropdown */}
-          <div className="group relative py-2">
-            <button className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 ${navText} ${navHover}`}>
-              Resources
-              <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
-            </button>
+        /* mobile menu link */
+        .mob-link {
+          display: block;
+          border-radius: 0.75rem;
+          padding: 0.75rem 1rem;
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: var(--cw-ink-soft);
+          transition: background 0.15s, color 0.15s;
+          text-decoration: none;
+        }
+        .mob-link:hover { background: var(--cw-orange-light); color: var(--cw-orange-deep); }
 
-            <div className="invisible absolute left-1/2 top-12 w-72 -translate-x-1/2 translate-y-3 rounded-2xl border bg-white p-2 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-              {resources.map((item) => (
-                <Link
-                  key={item}
-                  href="#"
-                  className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-orange-600"
-                >
-                  {item}
-                </Link>
-              ))}
-            </div>
-          </div>
+        /* mobile CTA */
+        .mob-cta {
+          display: block;
+          text-align: center;
+          border-radius: 9999px;
+          padding: 0.75rem 1rem;
+          font-size: 0.875rem;
+          font-weight: 600;
+          background: var(--cw-orange);
+          color: #fff;
+          transition: background 0.15s;
+          text-decoration: none;
+        }
+        .mob-cta:hover { background: var(--cw-orange-deep); }
 
-          <Link
-            href="/about"
-            className={`relative text-sm font-medium transition-colors duration-200 ${navText} ${navHover} after:absolute after:bottom-[-6px] after:left-0 after:h-[2px] after:w-0 after:bg-orange-400 after:transition-all hover:after:w-full`}
-          >
-            About Us
-          </Link>
+        @media (prefers-reduced-motion: reduce) {
+          .nav-root * { transition: none !important; animation: none !important; }
+        }
+      `}</style>
 
-          <Link
-            href="/contact"
-            className={`relative text-sm font-medium transition-colors duration-200 ${navText} ${navHover} after:absolute after:bottom-[-6px] after:left-0 after:h-[2px] after:w-0 after:bg-orange-400 after:transition-all hover:after:w-full`}
-          >
-            Contact
-          </Link>
-        </nav>
-
-        {/* Desktop CTA */}
-        <div className="hidden items-center gap-3 lg:flex shrink-0">
-          {/* <Link
-            href="https://wa.me/919999999999"
-            className="flex items-center gap-2 rounded-xl border border-white/30 bg-transparent px-5 py-2.5 text-sm font-medium text-white transition-all hover:border-white hover:bg-white/10 active:scale-[0.98]"
-          >
-            <Phone className="h-4 w-4 text-white" />
-            WhatsApp
-          </Link> */}
-
-          <Link
-            href="/apply"
-            className="rounded-xl bg-orange-400 px-6 py-2.5 text-sm font-semibold text-black shadow-md shadow-orange-400/10 transition-all hover:bg-orange-300 hover:shadow-orange-400/20 active:scale-[0.98]"
-          >
-            Apply Now
-          </Link>
-        </div>
-
-        {/* Mobile Button */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className={`rounded-lg p-1.5 transition-colors lg:hidden ${mobileBtn}`}
-        >
-          {mobileOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
-        </button>
-      </div>
-
-      {/* Backdrop blur overlay — removed, now lives outside header */}
-
-      {/* Mobile Menu */}
+      {/* Backdrop */}
       {mobileOpen && (
-        <div className="mt-2 mx-6 rounded-2xl border border-slate-100 bg-white lg:hidden shadow-xl">
-          <div className="max-h-[calc(100vh-120px)] overflow-y-auto space-y-1 px-4 py-4">
-            <Link
-              href="/"
-              className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-orange-400"
-            >
-              Home
-            </Link>
+        <div
+          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
 
-            <Link
-              href="/jobs"
-              className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-orange-400"
+      <header className="nav-root fixed top-0 z-50 w-full bg-transparent py-4 px-4">
+        {/* Pill box */}
+        <div
+          className={`mx-auto flex h-20 max-w-[1440px] items-center justify-between rounded-2xl border backdrop-blur-md px-6 transition-all duration-300 ${boxBg}`}
+        >
+          {/* Logo */}
+          <Link href="/" className="group flex items-center gap-3 shrink-0">
+            <div
+              className="flex h-11 w-11 items-center justify-center rounded-xl text-white transition-transform duration-300 group-hover:scale-105"
+              style={{ background: "var(--cw-orange)" }}
             >
-              Jobs
-            </Link>
-
-            <Link
-              href="/countries"
-              className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-orange-400"
-            >
-              Countries
-            </Link>
-
-            {/* Services Mobile dropdown */}
+              <BriefcaseBusiness className="h-5 w-5" aria-hidden="true" />
+            </div>
             <div>
+              <p
+                className="nav-logo-name text-[15px] leading-none transition-colors duration-300"
+                style={{ color: logoTitle }}
+              >
+                Blitz
+              </p>
+              <p
+                className="nav-logo-sub text-[11px] uppercase tracking-wider mt-0.5 transition-colors duration-300"
+                style={{ color: logoSub }}
+              >
+                Immigration
+              </p>
+            </div>
+          </Link>
+
+          {/* Desktop nav */}
+          <nav className="hidden items-center gap-7 lg:flex">
+            {[
+              { href: "/about", label: "About Us" },
+              { href: "/jobs", label: "Jobs" },
+              { href: "/countries", label: "Countries" },
+              { href: "/contact", label: "Contact" },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className={`nav-link-base ${navText}`}
+              >
+                {label}
+              </Link>
+            ))}
+
+            {/* Services dropdown */}
+            <div className="group relative py-2">
               <button
-                onClick={() => setServicesOpen(!servicesOpen)}
-                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-orange-400"
+                className={`nav-link-base flex items-center gap-1 bg-transparent border-0 cursor-pointer ${navText}`}
               >
                 Services
                 <ChevronDown
-                  className={`h-4 w-4 transition-transform duration-200 ${
-                    servicesOpen ? "rotate-180" : ""
-                  }`}
+                  className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180"
+                  aria-hidden="true"
                 />
               </button>
-
-              {servicesOpen && (
-                <div className="mt-1 ml-4 space-y-1 border-l-2 border-slate-100 pl-2">
-                  {services.map((item) => (
-                    <Link
-                      key={item}
-                      href="#"
-                      className="block rounded-lg px-4 py-2.5 text-sm font-medium text-slate-500 hover:bg-slate-50 hover:text-orange-400"
-                    >
-                      {item}
-                    </Link>
-                  ))}
-                </div>
-              )}
+              <div className="invisible absolute left-1/2 top-12 w-68 -translate-x-1/2 translate-y-3 rounded-2xl border border-[var(--cw-line)] bg-white p-2 shadow-lg opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                {services.map((item) => (
+                  <a key={item} href="#" className="nav-dropdown-item">
+                    {item}
+                  </a>
+                ))}
+              </div>
             </div>
 
-            {/* Resources Mobile dropdown */}
-            <div>
+            {/* Resources dropdown */}
+            <div className="group relative py-2">
               <button
-                onClick={() => setResourcesOpen(!resourcesOpen)}
-                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-orange-400"
+                className={`nav-link-base flex items-center gap-1 bg-transparent border-0 cursor-pointer ${navText}`}
               >
                 Resources
                 <ChevronDown
-                  className={`h-4 w-4 transition-transform duration-200 ${
-                    resourcesOpen ? "rotate-180" : ""
-                  }`}
+                  className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180"
+                  aria-hidden="true"
                 />
               </button>
-
-              {resourcesOpen && (
-                <div className="mt-1 ml-4 space-y-1 border-l-2 border-slate-100 pl-2">
-                  {resources.map((item) => (
-                    <Link
-                      key={item}
-                      href="#"
-                      className="block rounded-lg px-4 py-2.5 text-sm font-medium text-slate-500 hover:bg-slate-50 hover:text-orange-400"
-                    >
-                      {item}
-                    </Link>
-                  ))}
-                </div>
-              )}
+              <div className="invisible absolute left-1/2 top-12 w-56 -translate-x-1/2 translate-y-3 rounded-2xl border border-[var(--cw-line)] bg-white p-2 shadow-lg opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                {resources.map((item) => (
+                  <a key={item} href="#" className="nav-dropdown-item">
+                    {item}
+                  </a>
+                ))}
+              </div>
             </div>
+          </nav>
 
-            <Link
-              href="/about"
-              className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-orange-400"
-            >
-              About Us
+          {/* Desktop CTA */}
+          <div className="hidden items-center lg:flex shrink-0">
+            <Link href="/apply" className="nav-cta">
+              Apply Now
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </Link>
+          </div>
 
-            <Link
-              href="/contact"
-              className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-orange-400"
-            >
-              Contact
-            </Link>
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className={`rounded-xl p-2 transition-colors lg:hidden ${mobileBtn}`}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          >
+            {mobileOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+        </div>
 
-            <div className="mt-6 flex flex-col gap-2 px-4 pb-4">
-              <Link
-                href="https://wa.me/919999999999"
-                className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-4 py-3 text-center text-sm font-medium text-slate-700 hover:bg-slate-50"
-              >
-                <Phone className="h-4 w-4 text-slate-400" />
-                WhatsApp
-              </Link>
+        {/* Mobile menu */}
+        {mobileOpen && (
+          <div className="mt-2 mx-2 rounded-2xl border border-[var(--cw-line)] bg-white lg:hidden shadow-xl overflow-hidden">
+            <div className="max-h-[calc(100vh-120px)] overflow-y-auto space-y-0.5 px-3 py-4">
+              {["/", "/jobs", "/countries", "/about", "/contact"].map(
+                (href) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    className="mob-link"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {
+                      {
+                        "/": "Home",
+                        "/about": "About Us",
+                        "/jobs": "Jobs",
+                        "/countries": "Countries",
+                        "/contact": "Contact",
+                      }[href]
+                    }
+                  </Link>
+                ),
+              )}
 
-              <Link
-                href="/apply"
-                className="rounded-xl bg-orange-400 px-4 py-3 text-center text-sm font-semibold text-white shadow-md shadow-orange-400/10 hover:bg-orange-300"
-              >
-                Apply Now
-              </Link>
+              {/* Services accordion */}
+              <div>
+                <button
+                  onClick={() => setServicesOpen(!servicesOpen)}
+                  className="mob-link flex w-full items-center justify-between"
+                >
+                  Services
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
+                    aria-hidden="true"
+                  />
+                </button>
+                {servicesOpen && (
+                  <div
+                    className="ml-4 mt-1 space-y-0.5 border-l-2 pl-3"
+                    style={{ borderColor: "var(--cw-line)" }}
+                  >
+                    {services.map((item) => (
+                      <a key={item} href="#" className="mob-link text-xs py-2">
+                        {item}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Resources accordion */}
+              <div>
+                <button
+                  onClick={() => setResourcesOpen(!resourcesOpen)}
+                  className="mob-link flex w-full items-center justify-between"
+                >
+                  Resources
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`}
+                    aria-hidden="true"
+                  />
+                </button>
+                {resourcesOpen && (
+                  <div
+                    className="ml-4 mt-1 space-y-0.5 border-l-2 pl-3"
+                    style={{ borderColor: "var(--cw-line)" }}
+                  >
+                    {resources.map((item) => (
+                      <a key={item} href="#" className="mob-link text-xs py-2">
+                        {item}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile CTAs */}
+              <div className="mt-4 flex flex-col gap-2 px-1 pb-2">
+                <a
+                  href="https://wa.me/919999999999"
+                  className="mob-link flex items-center justify-center gap-2 border rounded-full py-3"
+                  style={{ borderColor: "var(--cw-line)" }}
+                >
+                  <Phone
+                    className="h-4 w-4"
+                    style={{ color: "var(--cw-ink-soft)" }}
+                    aria-hidden="true"
+                  />
+                  WhatsApp
+                </a>
+                <Link href="/apply" className="mob-cta">
+                  Apply Now
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </header>
     </>
   );
 }
