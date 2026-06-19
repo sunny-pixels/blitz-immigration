@@ -82,8 +82,8 @@ export default function Hero() {
 
           {/* Description — Inter 400 */}
           <p className="hero-body text-white/75 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-            We connect skilled Indian professionals with verified employers across
-            Europe, the Middle East, North America, and beyond — in trades,
+            We connect skilled and unskilled Indian workers with verified employers across
+            Europe, the UK, Canada, Australia, New Zealand, and beyond — in trades,
             healthcare, construction, hospitality, and more.
           </p>
 

@@ -41,8 +41,8 @@ import {
 const credentials = [
   {
     icon: ShieldCheck,
-    label: "MEA Licensed Recruiter",
-    sub: "Reg. No. B-XXXX/XXX/XXXX/XXXX",
+    label: "Licensed Overseas Recruiter",
+    sub: "Certified for international placement",
   },
   {
     icon: Award,

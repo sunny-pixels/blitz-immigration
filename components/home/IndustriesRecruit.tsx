@@ -24,7 +24,7 @@ const industries = [
     icon: Stethoscope,
     title: "Healthcare & Nursing",
     code: "HLT",
-    destination: "EU · UK · Canada · Gulf",
+    destination: "UK · EU · Canada · Australia",
     demand: "Very High",
     roles: [
       { title: "Registered Nurse", openings: "2,400+" },
@@ -38,7 +38,7 @@ const industries = [
     icon: HardHat,
     title: "Construction & Trades",
     code: "CST",
-    destination: "Germany · Gulf · Australia",
+    destination: "UK · Germany · Australia · Canada",
     demand: "High",
     roles: [
       { title: "Electrician", openings: "1,700+" },
@@ -52,7 +52,7 @@ const industries = [
     icon: UtensilsCrossed,
     title: "Hospitality & Tourism",
     code: "HSP",
-    destination: "UAE · UK · Maldives",
+    destination: "UK · Maldives · Philippines · Australia",
     demand: "High",
     roles: [
       { title: "Hotel Front Office Executive", openings: "760+" },
@@ -79,7 +79,7 @@ const industries = [
     icon: Package,
     title: "Logistics & Warehousing",
     code: "LOG",
-    destination: "Netherlands · UK · UAE",
+    destination: "Netherlands · UK · Canada · Australia",
     demand: "Steady",
     roles: [
       { title: "Warehouse Associate", openings: "1,400+" },
@@ -92,7 +92,7 @@ const industries = [
     icon: Truck,
     title: "Transportation & Drivers",
     code: "TRN",
-    destination: "UK · EU · Gulf",
+    destination: "UK · EU · Australia · Canada",
     demand: "Steady",
     roles: [
       { title: "Heavy Vehicle Driver", openings: "1,100+" },
@@ -131,7 +131,7 @@ const industries = [
     icon: Wrench,
     title: "Engineering & Technical",
     code: "ENG",
-    destination: "Germany · Australia · Gulf",
+    destination: "UK · Germany · Australia · New Zealand",
     demand: "High",
     roles: [
       { title: "Mechanical Engineer", openings: "880+" },
@@ -144,7 +144,7 @@ const industries = [
     icon: Building2,
     title: "Facility Management",
     code: "FMT",
-    destination: "UAE · UK · Singapore",
+    destination: "UK · Australia · New Zealand",
     demand: "Steady",
     roles: [
       { title: "Maintenance Technician", openings: "590+" },

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Blitz Immigration is an MEA-licensed overseas recruitment agency connecting skilled Indian workers with verified employers across the UAE, Saudi Arabia, Qatar, Kuwait, Oman, Europe, Asia Pacific, and other global destinations.",
+    "Blitz Immigration is a licensed overseas recruitment agency connecting skilled and unskilled Indian workers with verified employers across the UK, Europe, Canada, Australia, New Zealand, and other global destinations.",
 
   keywords: [
     "overseas jobs",
@@ -24,15 +24,17 @@ export const metadata: Metadata = {
     "global recruitment",
     "overseas employment",
     "work abroad from India",
-    "MEA licensed recruiter",
+    "licensed overseas recruiter",
     "Indian manpower recruitment",
-    "UAE jobs",
-    "Saudi Arabia jobs",
-    "Qatar jobs",
+    "UK jobs for Indians",
+    "Canada jobs",
+    "Australia jobs",
     "Europe jobs",
+    "New Zealand jobs",
     "overseas placement services",
     "foreign jobs for Indians",
     "international hiring",
+    "skilled unskilled workers abroad",
     "Blitz Immigration",
   ],
 
@@ -43,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blitz Immigration | Your Career Beyond Borders Starts Here",
     description:
-      "Connecting Indian talent with verified employers worldwide. Explore overseas job opportunities across the Middle East, Europe, Asia Pacific, and beyond.",
+      "Connecting Indian talent with verified employers worldwide. Explore overseas job opportunities across Europe, the UK, Canada, Australia, New Zealand, and beyond.",
     url: "https://blitzimmigration.com",
     siteName: "Blitz Immigration",
     locale: "en_US",

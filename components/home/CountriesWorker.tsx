@@ -34,7 +34,7 @@ import {
 // Data
 // ---------------------------------------------------------------------------
 
-type Region = "Middle East & Gulf" | "Asia Pacific" | "Europe";
+type Region = "Europe" | "Asia Pacific" | "Oceania" | "North America";
 
 interface CountryRow {
   id: string;
@@ -47,98 +47,96 @@ interface CountryRow {
 
 const COUNTRIES: CountryRow[] = [
   {
-    id: "uae",
-    flag: "🇦🇪",
-    name: "United Arab Emirates",
-    code: "DXB",
-    region: "Middle East & Gulf",
-    jobs: 245,
+    id: "gbr",
+    flag: "🇬🇧",
+    name: "United Kingdom",
+    code: "LHR",
+    region: "Europe",
+    jobs: 280,
   },
   {
-    id: "ksa",
-    flag: "🇸🇦",
-    name: "Saudi Arabia",
-    code: "RUH",
-    region: "Middle East & Gulf",
-    jobs: 180,
+    id: "deu",
+    flag: "🇩🇪",
+    name: "Germany",
+    code: "FRA",
+    region: "Europe",
+    jobs: 240,
   },
   {
-    id: "qat",
-    flag: "🇶🇦",
-    name: "Qatar",
-    code: "DOH",
-    region: "Middle East & Gulf",
+    id: "can",
+    flag: "🇨🇦",
+    name: "Canada",
+    code: "YYZ",
+    region: "North America",
+    jobs: 210,
+  },
+  {
+    id: "aus",
+    flag: "🇦🇺",
+    name: "Australia",
+    code: "SYD",
+    region: "Oceania",
+    jobs: 185,
+  },
+  {
+    id: "nzl",
+    flag: "🇳🇿",
+    name: "New Zealand",
+    code: "AKL",
+    region: "Oceania",
     jobs: 95,
   },
   {
-    id: "kwt",
-    flag: "🇰🇼",
-    name: "Kuwait",
-    code: "KWI",
-    region: "Middle East & Gulf",
-    jobs: 75,
+    id: "nld",
+    flag: "🇳🇱",
+    name: "Netherlands",
+    code: "AMS",
+    region: "Europe",
+    jobs: 88,
   },
   {
-    id: "omn",
-    flag: "🇴🇲",
-    name: "Oman",
-    code: "MCT",
-    region: "Middle East & Gulf",
-    jobs: 60,
-  },
-  {
-    id: "mys",
-    flag: "🇲🇾",
-    name: "Malaysia",
-    code: "KUL",
+    id: "phl",
+    flag: "🇵🇭",
+    name: "Philippines",
+    code: "MNL",
     region: "Asia Pacific",
-    jobs: 55,
+    jobs: 72,
   },
   {
-    id: "bhr",
-    flag: "🇧🇭",
-    name: "Bahrain",
-    code: "BAH",
-    region: "Middle East & Gulf",
+    id: "mdv",
+    flag: "🇲🇻",
+    name: "Maldives",
+    code: "MLE",
+    region: "Asia Pacific",
+    jobs: 58,
+  },
+  {
+    id: "pol",
+    flag: "🇵🇱",
+    name: "Poland",
+    code: "WAW",
+    region: "Europe",
+    jobs: 52,
+  },
+  {
+    id: "irl",
+    flag: "🇮🇪",
+    name: "Ireland",
+    code: "DUB",
+    region: "Europe",
     jobs: 40,
-  },
-  {
-    id: "sgp",
-    flag: "🇸🇬",
-    name: "Singapore",
-    code: "SIN",
-    region: "Asia Pacific",
-    jobs: 30,
-  },
-  {
-    id: "rou",
-    flag: "🇷🇴",
-    name: "Romania",
-    code: "OTP",
-    region: "Europe",
-    jobs: 25,
-  },
-  {
-    id: "hrv",
-    flag: "🇭🇷",
-    name: "Croatia",
-    code: "ZAG",
-    region: "Europe",
-    jobs: 20,
   },
 ];
 
 const TOTAL_JOBS = COUNTRIES.reduce((sum, c) => sum + c.jobs, 0);
 const TOTAL_REGIONS = new Set(COUNTRIES.map((c) => c.region)).size;
-const GULF_COUNT = COUNTRIES.filter(
-  (c) => c.region === "Middle East & Gulf",
-).length;
+const EU_COUNT = COUNTRIES.filter((c) => c.region === "Europe").length;
 
 const STATS: { value: string; label: string }[] = [
   { value: `${COUNTRIES.length}`, label: "Destination countries" },
   { value: `${TOTAL_JOBS}+`, label: "Open roles right now" },
   { value: `${TOTAL_REGIONS}`, label: "Regions covered" },
-  { value: `${GULF_COUNT}`, label: "Gulf nations hiring" },
+  { value: `${EU_COUNT}`, label: "European nations hiring" },
 ];
 
 function getDemandBadge(jobs: number): { label: string; className: string } {
@@ -169,46 +167,40 @@ interface SectorGroup {
 
 const SECTOR_GROUPS: SectorGroup[] = [
   {
-    id: "g-uae",
-    flags: "🇦🇪",
-    destination: "United Arab Emirates",
-    sectors: [
-      "Construction",
-      "Hospitality",
-      "Logistics",
-      "Retail",
-      "Healthcare",
-    ],
+    id: "g-gbr",
+    flags: "🇬🇧",
+    destination: "United Kingdom",
+    sectors: ["Healthcare", "Construction", "Hospitality", "Logistics", "IT"],
   },
   {
-    id: "g-ksa",
-    flags: "🇸🇦",
-    destination: "Saudi Arabia",
-    sectors: ["Construction", "Engineering", "Maintenance", "Healthcare"],
+    id: "g-deu",
+    flags: "🇩🇪",
+    destination: "Germany",
+    sectors: ["Engineering", "Manufacturing", "Construction", "Healthcare"],
   },
   {
-    id: "g-qat",
-    flags: "🇶🇦",
-    destination: "Qatar",
-    sectors: ["Infrastructure", "Hospitality", "Facility Management"],
+    id: "g-can",
+    flags: "🇨🇦",
+    destination: "Canada",
+    sectors: ["Healthcare", "Agriculture", "IT", "Construction", "Trades"],
   },
   {
-    id: "g-kwt-omn",
-    flags: "🇰🇼🇴🇲",
-    destination: "Kuwait & Oman",
-    sectors: ["Oil & Gas Support", "Construction", "Technical Trades"],
+    id: "g-aus-nzl",
+    flags: "🇦🇺🇳🇿",
+    destination: "Australia & New Zealand",
+    sectors: ["Skilled Trades", "Healthcare", "Agriculture", "Hospitality"],
   },
   {
-    id: "g-mys-sgp",
-    flags: "🇲🇾🇸🇬",
-    destination: "Malaysia & Singapore",
-    sectors: ["Manufacturing", "Electronics", "Services"],
+    id: "g-nld-pol",
+    flags: "🇳🇱🇵🇱",
+    destination: "Netherlands & Poland",
+    sectors: ["Manufacturing", "Logistics", "Warehousing", "Agriculture"],
   },
   {
-    id: "g-eu",
-    flags: "🇷🇴🇭🇷",
-    destination: "Romania & Croatia",
-    sectors: ["Skilled Trades", "Manufacturing", "Warehousing", "Hospitality"],
+    id: "g-phl-mdv",
+    flags: "🇵🇭🇲🇻",
+    destination: "Philippines & Maldives",
+    sectors: ["Hospitality", "Healthcare", "Tourism", "F&B"],
   },
 ];
 
@@ -506,10 +498,10 @@ export default function CountriesWorkers() {
             Find jobs by destination
           </h2>
           <p className="mt-2 text-[var(--cw-ink-soft)]">
-            Whether it&apos;s construction in the Gulf, hospitality in the
-            Middle East, manufacturing in Asia, or skilled trades in Europe, we
-            connect workers with verified employers across every country we
-            serve.
+            Whether it&apos;s construction in Germany, healthcare in the UK and Canada,
+            hospitality in the Maldives and Philippines, manufacturing in the Netherlands,
+            or skilled trades in Australia, we connect workers with verified employers
+            across every country we serve.
           </p>
         </div>
 

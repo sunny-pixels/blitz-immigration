@@ -158,7 +158,7 @@ const CATEGORIES: FAQCategory[] = [
         id: "countries",
         question: "Which countries does Blitz Immigration recruit for?",
         answer:
-          "We regularly connect Indian workers with opportunities across the Middle East, Europe, Asia, and other international destinations. Available countries and job openings may change based on employer demand and active recruitment campaigns.",
+          "We regularly connect Indian workers with opportunities across Europe, the UK, Canada, Australia, New Zealand, and other international destinations. Available countries and job openings may change based on employer demand and active recruitment campaigns.",
       },
     ],
   },

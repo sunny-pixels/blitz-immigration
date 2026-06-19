@@ -12,7 +12,7 @@ const FEATURED = [
     readTime: "6 min read",
     title: "Visa & Work Permit Guides for Indian Workers",
     excerpt:
-      "Documentation, medical exams, and work permit procedures for the most popular overseas destinations — Gulf, Europe, and Canada.",
+      "Documentation, medical exams, and work permit procedures for the most popular overseas destinations — Europe, Canada, Australia, and New Zealand.",
     href: "/resources/visa-guides",
     illustrationBg: "var(--cw-bg-warm)",
     IllustrationSvg: VisaIllustration,
@@ -44,7 +44,7 @@ const FEATURED = [
 const ARTICLES = [
   { title: "Complete Guide to Working Abroad from India", tag: "Visa Guide", tagStyle: "bg-[var(--cw-orange-light)] text-[var(--cw-orange-deep)]", href: "/resources/complete-guide" },
   { title: "Documents Required for Overseas Employment", tag: "Visa Guide", tagStyle: "bg-[var(--cw-orange-light)] text-[var(--cw-orange-deep)]", href: "/resources/documents-required" },
-  { title: "UAE vs Saudi Arabia: Salary and Career Comparison", tag: "Salary", tagStyle: "bg-[#E1F5EE] text-[#0F6E56]", href: "/resources/uae-vs-saudi" },
+  { title: "UK vs Canada: Salary and Career Comparison", tag: "Salary", tagStyle: "bg-[#E1F5EE] text-[#0F6E56]", href: "/resources/uk-vs-canada" },
   { title: "Top Countries Hiring Skilled Workers from India", tag: "Country", tagStyle: "bg-[#E6F1FB] text-[#185FA5]", href: "/resources/top-countries" },
   { title: "How to Prepare for an International Job Interview", tag: "Job Tips", tagStyle: "bg-[#EEEDFE] text-[#534AB7]", href: "/resources/interview-tips" },
   { title: "Understanding Overseas Employment Contracts", tag: "Job Tips", tagStyle: "bg-[#EEEDFE] text-[#534AB7]", href: "/resources/employment-contracts" },
