@@ -153,7 +153,7 @@ export default function AboutPage() {
       {/* ----------------------------------------------------------------- */}
       {/* Masthead                                                          */}
       {/* ----------------------------------------------------------------- */}
-      <div className="mx-auto max-w-3xl px-6 pt-20 sm:pt-28 lg:px-8">
+      <div className="mx-auto max-w-3xl px-6 pt-28 sm:pt-36 lg:px-8">
         <span className="cw-mono text-xs font-medium uppercase tracking-wider text-[var(--cw-orange-deep)]">
           About Blitz Immigration
         </span>

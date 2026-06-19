@@ -2,30 +2,30 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import {
   ChevronDown,
   Menu,
   X,
-  Phone,
   BriefcaseBusiness,
   ArrowUpRight,
 } from "lucide-react";
 
-const services = [
-  "Overseas Recruitment",
-  "Work Visa Assistance",
-  "Resume Assessment",
-  "Interview Preparation",
-  "Documentation Support",
-  "Pre-Departure Guidance",
+const services: { label: string; slug: string }[] = [
+  { label: "Overseas Recruitment",  slug: "overseas-recruitment" },
+  { label: "Work Visa Assistance",  slug: "work-visa-assistance" },
+  { label: "Resume Assessment",     slug: "resume-assessment" },
+  { label: "Interview Preparation", slug: "interview-preparation" },
+  { label: "Documentation Support", slug: "documentation-support" },
+  { label: "Pre-Departure Guidance",slug: "pre-departure-guidance" },
 ];
 
-const resources = [
-  "Blog",
-  "Success Stories",
-  "FAQ",
-  "Recruitment Process",
-  "Salary Guides",
+const resources: { label: string; slug: string }[] = [
+  { label: "Blog",                slug: "blog" },
+  { label: "Success Stories",     slug: "success-stories" },
+  { label: "FAQ",                 slug: "faq" },
+  { label: "Recruitment Process", slug: "recruitment-process" },
+  { label: "Salary Guides",       slug: "salary-guides" },
 ];
 
 export default function Navbar() {
@@ -33,6 +33,8 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -41,11 +43,14 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navText = scrolled ? "nav-link-dark" : "nav-link-light";
-  const logoTitle = scrolled ? "#1C1410" : "#ffffff";
-  const logoSub = scrolled ? "#6B5D52" : "rgba(255,255,255,0.65)";
-  const mobileBtn = scrolled ? "mob-btn-dark" : "mob-btn-light";
-  const boxBg = scrolled ? "nav-box-scrolled" : "nav-box-top";
+  // On home: transparent until scrolled. On other pages: always white.
+  const isDark = isHome && !scrolled;
+
+  const navText  = isDark ? "nav-link-light" : "nav-link-dark";
+  const logoTitle = isDark ? "#ffffff" : "#1C1410";
+  const logoSub   = isDark ? "rgba(255,255,255,0.65)" : "#6B5D52";
+  const mobileBtn = isDark ? "mob-btn-light" : "mob-btn-dark";
+  const boxBg     = isDark ? "nav-box-top" : "nav-box-scrolled";
 
   return (
     <>
@@ -237,9 +242,9 @@ export default function Navbar() {
               </button>
               <div className="invisible absolute left-1/2 top-12 w-68 -translate-x-1/2 translate-y-3 rounded-2xl border border-[var(--cw-line)] bg-white p-2 shadow-lg opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                 {services.map((item) => (
-                  <a key={item} href="#" className="nav-dropdown-item">
-                    {item}
-                  </a>
+                  <Link key={item.slug} href={`/services/${item.slug}`} className="nav-dropdown-item">
+                    {item.label}
+                  </Link>
                 ))}
               </div>
             </div>
@@ -257,9 +262,9 @@ export default function Navbar() {
               </button>
               <div className="invisible absolute left-1/2 top-12 w-56 -translate-x-1/2 translate-y-3 rounded-2xl border border-[var(--cw-line)] bg-white p-2 shadow-lg opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                 {resources.map((item) => (
-                  <a key={item} href="#" className="nav-dropdown-item">
-                    {item}
-                  </a>
+                  <Link key={item.slug} href={`/resources/${item.slug}`} className="nav-dropdown-item">
+                    {item.label}
+                  </Link>
                 ))}
               </div>
             </div>
@@ -289,50 +294,37 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="mt-2 mx-2 rounded-2xl border border-[var(--cw-line)] bg-white lg:hidden shadow-xl overflow-hidden">
-            <div className="max-h-[calc(100vh-120px)] overflow-y-auto space-y-0.5 px-3 py-4">
-              {["/", "/jobs", "/countries", "/about", "/contact"].map(
-                (href) => (
-                  <Link
-                    key={href}
-                    href={href}
-                    className="mob-link"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {
-                      {
-                        "/": "Home",
-                        "/about": "About Us",
-                        "/jobs": "Jobs",
-                        "/countries": "Countries",
-                        "/contact": "Contact",
-                      }[href]
-                    }
-                  </Link>
-                ),
-              )}
+          <div className="mt-2 mx-2 w-[calc(100%-1rem)] rounded-2xl border border-[var(--cw-line)] bg-white lg:hidden shadow-xl overflow-hidden">
+            <div className="max-h-[calc(100vh-120px)] overflow-y-auto px-3 py-3">
+
+              {/* Nav links — same order as desktop */}
+              {[
+                { href: "/about", label: "About Us" },
+                { href: "/jobs", label: "Jobs" },
+                { href: "/countries", label: "Countries" },
+                { href: "/contact", label: "Contact" },
+              ].map(({ href, label }) => (
+                <Link key={href} href={href} className="mob-link" onClick={() => setMobileOpen(false)}>
+                  {label}
+                </Link>
+              ))}
 
               {/* Services accordion */}
               <div>
                 <button
                   onClick={() => setServicesOpen(!servicesOpen)}
-                  className="mob-link flex w-full items-center justify-between"
+                  style={{ display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between" }}
+                  className="mob-link"
                 >
-                  Services
-                  <ChevronDown
-                    className={`h-4 w-4 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
-                    aria-hidden="true"
-                  />
+                  <span>Services</span>
+                  <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} aria-hidden="true" />
                 </button>
                 {servicesOpen && (
-                  <div
-                    className="ml-4 mt-1 space-y-0.5 border-l-2 pl-3"
-                    style={{ borderColor: "var(--cw-line)" }}
-                  >
+                  <div className="ml-4 mt-1 space-y-0.5 border-l-2 pl-3" style={{ borderColor: "var(--cw-line)" }}>
                     {services.map((item) => (
-                      <a key={item} href="#" className="mob-link text-xs py-2">
-                        {item}
-                      </a>
+                      <Link key={item.slug} href={`/services/${item.slug}`} className="mob-link py-2 text-xs block" onClick={() => setMobileOpen(false)}>
+                        {item.label}
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -342,46 +334,33 @@ export default function Navbar() {
               <div>
                 <button
                   onClick={() => setResourcesOpen(!resourcesOpen)}
-                  className="mob-link flex w-full items-center justify-between"
+                  style={{ display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between" }}
+                  className="mob-link"
                 >
-                  Resources
-                  <ChevronDown
-                    className={`h-4 w-4 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`}
-                    aria-hidden="true"
-                  />
+                  <span>Resources</span>
+                  <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`} aria-hidden="true" />
                 </button>
                 {resourcesOpen && (
-                  <div
-                    className="ml-4 mt-1 space-y-0.5 border-l-2 pl-3"
-                    style={{ borderColor: "var(--cw-line)" }}
-                  >
+                  <div className="ml-4 mt-1 space-y-0.5 border-l-2 pl-3" style={{ borderColor: "var(--cw-line)" }}>
                     {resources.map((item) => (
-                      <a key={item} href="#" className="mob-link text-xs py-2">
-                        {item}
-                      </a>
+                      <Link key={item.slug} href={`/resources/${item.slug}`} className="mob-link py-2 text-xs block" onClick={() => setMobileOpen(false)}>
+                        {item.label}
+                      </Link>
                     ))}
                   </div>
                 )}
               </div>
 
-              {/* Mobile CTAs */}
-              <div className="mt-4 flex flex-col gap-2 px-1 pb-2">
-                <a
-                  href="https://wa.me/919999999999"
-                  className="mob-link flex items-center justify-center gap-2 border rounded-full py-3"
-                  style={{ borderColor: "var(--cw-line)" }}
-                >
-                  <Phone
-                    className="h-4 w-4"
-                    style={{ color: "var(--cw-ink-soft)" }}
-                    aria-hidden="true"
-                  />
-                  WhatsApp
-                </a>
-                <Link href="/apply" className="mob-cta">
+              {/* Divider */}
+              <div className="my-3 border-t" style={{ borderColor: "var(--cw-line)" }} />
+
+              {/* CTA only — no WhatsApp */}
+              <div className="pb-1">
+                <Link href="/apply" className="mob-cta" onClick={() => setMobileOpen(false)}>
                   Apply Now
                 </Link>
               </div>
+
             </div>
           </div>
         )}
