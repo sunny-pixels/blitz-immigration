@@ -241,106 +241,137 @@ export default function CountriesWorkers() {
         </div>
       </div>
 
-      {/* ----------------------------------------------------------------- */}
-      {/* Departures board table                                            */}
-      {/* ----------------------------------------------------------------- */}
-      <div className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <h2 className="cw-display text-2xl font-bold sm:text-3xl">
-              Current open jobs by country
-            </h2>
-            <p className="mt-2 text-[var(--cw-ink-soft)]">
-              Counts are updated regularly as positions are filled and new vacancies open.
-            </p>
-          </div>
-          <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-[var(--cw-ink-soft)]">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--cw-orange)] opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--cw-orange)]" />
-            </span>
-            Updated regularly
-          </div>
-        </div>
+{/* ----------------------------------------------------------------- */}
+{/* Departures board table                                            */}
+{/* ----------------------------------------------------------------- */}
+<div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+  <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+    <div>
+      <h2 className="cw-display text-2xl font-bold sm:text-3xl">
+        Current open jobs by country
+      </h2>
+      <p className="mt-2 text-[var(--cw-ink-soft)]">
+        Counts are updated regularly as positions are filled and new vacancies
+        open.
+      </p>
+    </div>
 
-        <div className="mt-8 overflow-x-auto rounded-2xl border border-[var(--cw-line)]">
-          <table className="w-full min-w-[680px] border-collapse text-left">
-            <thead>
-              <tr className="border-b-2 border-[var(--cw-orange)] bg-[var(--cw-bg-warm)]">
-                <th scope="col" className="cw-mono px-5 py-3 text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)]">
-                  #
-                </th>
-                <th scope="col" className="px-5 py-3 text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)]">
-                  Country
-                </th>
-                <th scope="col" className="cw-mono px-5 py-3 text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)]">
-                  Code
-                </th>
-                <th scope="col" className="px-5 py-3 text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)]">
-                  Region
-                </th>
-                <th scope="col" className="px-5 py-3 text-right text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)]">
-                  Open jobs
-                </th>
-                <th scope="col" className="px-5 py-3 text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)]">
-                  Demand
-                </th>
-                <th scope="col" className="px-5 py-3 text-right text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)]">
-                  <span className="sr-only">View jobs</span>
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-[var(--cw-line)]">
-              {COUNTRIES.map((country, index) => {
-                const badge = getDemandBadge(country.jobs);
-                return (
-                  <tr
-                    key={country.id}
-                    className="transition-colors hover:bg-[var(--cw-bg-warm)]"
+    <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-[var(--cw-ink-soft)]">
+      <span className="relative flex h-2 w-2">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--cw-orange)] opacity-60" />
+        <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--cw-orange)]" />
+      </span>
+      Updated regularly
+    </div>
+  </div>
+
+  <div className="mt-8 overflow-hidden rounded-2xl border border-[var(--cw-line)]">
+    <table className="w-full border-collapse text-left">
+      <thead>
+        <tr className="border-b-2 border-[var(--cw-orange)] bg-[var(--cw-bg-warm)]">
+          <th className="cw-mono px-3 py-3 text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)] sm:px-5">
+            #
+          </th>
+
+          <th className="px-3 py-3 text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)] sm:px-5">
+            Country
+          </th>
+
+          <th className="cw-mono px-3 py-3 text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)] sm:px-5">
+            Code
+          </th>
+
+          {/* Hidden on mobile */}
+          <th className="hidden px-5 py-3 text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)] md:table-cell">
+            Region
+          </th>
+
+          <th className="px-3 py-3 text-right text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)] sm:px-5">
+            Jobs
+          </th>
+
+          {/* Hidden on mobile */}
+          <th className="hidden px-5 py-3 text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)] lg:table-cell">
+            Demand
+          </th>
+
+          <th className="px-3 py-3 text-right text-xs font-semibold uppercase tracking-wider text-[var(--cw-ink-soft)] sm:px-5">
+            <span className="sr-only">View jobs</span>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody className="divide-y divide-[var(--cw-line)]">
+        {COUNTRIES.map((country, index) => {
+          const badge = getDemandBadge(country.jobs);
+
+          return (
+            <tr
+              key={country.id}
+              className="transition-colors hover:bg-[var(--cw-bg-warm)]"
+            >
+              <td className="cw-mono px-3 py-4 text-sm text-stone-400 sm:px-5">
+                {String(index + 1).padStart(2, "0")}
+              </td>
+
+              <td className="px-3 py-4 sm:px-5">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span
+                    className="text-lg sm:text-xl leading-none"
+                    aria-hidden="true"
                   >
-                    <td className="cw-mono px-5 py-4 text-sm text-stone-400">
-                      {String(index + 1).padStart(2, "0")}
-                    </td>
-                    <td className="px-5 py-4">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xl leading-none" aria-hidden="true">
-                          {country.flag}
-                        </span>
-                        <span className="font-semibold">{country.name}</span>
-                      </div>
-                    </td>
-                    <td className="px-5 py-4">
-                      <span className="cw-mono rounded-md bg-stone-100 px-2 py-1 text-xs font-semibold text-stone-500">
-                        {country.code}
-                      </span>
-                    </td>
-                    <td className="px-5 py-4 text-sm text-[var(--cw-ink-soft)]">
-                      {country.region}
-                    </td>
-                    <td className="cw-mono px-5 py-4 text-right text-base font-bold text-[var(--cw-orange-deep)]">
-                      {country.jobs}+
-                    </td>
-                    <td className="px-5 py-4">
-                      <span className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${badge.className}`}>
-                        {badge.label}
-                      </span>
-                    </td>
-                    <td className="px-5 py-4 text-right">
-                      <Link
-                        href={`/jobs?country=${country.code}`}
-                        className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cw-orange)] hover:text-[var(--cw-orange-deep)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cw-orange)] focus-visible:rounded-sm"
-                      >
-                        View jobs
-                        <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-                      </Link>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-      </div>
+                    {country.flag}
+                  </span>
+
+                  <span className="font-semibold break-words">
+                    {country.name}
+                  </span>
+                </div>
+              </td>
+
+              <td className="px-3 py-4 sm:px-5">
+                <span className="cw-mono rounded-md bg-stone-100 px-2 py-1 text-[10px] sm:text-xs font-semibold text-stone-500">
+                  {country.code}
+                </span>
+              </td>
+
+              {/* Hidden on mobile */}
+              <td className="hidden px-5 py-4 text-sm text-[var(--cw-ink-soft)] md:table-cell">
+                {country.region}
+              </td>
+
+              <td className="cw-mono px-3 py-4 text-right text-sm sm:text-base font-bold text-[var(--cw-orange-deep)] sm:px-5">
+                {country.jobs}+
+              </td>
+
+              {/* Hidden on mobile */}
+              <td className="hidden px-5 py-4 lg:table-cell">
+                <span
+                  className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${badge.className}`}
+                >
+                  {badge.label}
+                </span>
+              </td>
+
+              <td className="px-3 py-4 text-right sm:px-5">
+                <Link
+                  href={`/jobs?country=${country.code}`}
+                  className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-[var(--cw-orange)] hover:text-[var(--cw-orange-deep)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cw-orange)] focus-visible:rounded-sm"
+                >
+                  View
+                  <ArrowUpRight
+                    className="h-3.5 w-3.5"
+                    aria-hidden="true"
+                  />
+                </Link>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+</div>
 
       {/* ----------------------------------------------------------------- */}
       {/* Sector cards — "boarding pass" style                              */}
