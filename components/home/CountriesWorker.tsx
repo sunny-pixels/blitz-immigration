@@ -9,6 +9,7 @@ import {
   TrendingUp,
   Languages,
   Send,
+  BriefcaseBusiness,
 } from "lucide-react";
 
 /**
@@ -246,6 +247,13 @@ const WHY_REASONS: WhyReason[] = [
     title: "Apply straight to the source",
     description:
       "Submit your application directly for openings in your chosen country, with no detours through unrelated listings.",
+  },
+  {
+  id: "career",
+  Icon: BriefcaseBusiness,
+  title: "Explore long-term career opportunities",
+  description:
+    "Compare destinations that offer strong career progression, international experience, and opportunities for future growth.",
   },
 ];
 

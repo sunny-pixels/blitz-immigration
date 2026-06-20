@@ -255,7 +255,6 @@ export default function IndustriesRecruit() {
       `}</style>
 
       <section className="ir-root relative bg-white overflow-hidden">
-
         {/* ── Decorative blob ───────────────────────────────────── */}
         <div
           aria-hidden="true"
@@ -264,7 +263,6 @@ export default function IndustriesRecruit() {
         />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-20 sm:pt-28 pb-20">
-
           {/* ── Section header ──────────────────────────────────── */}
           <div className="mb-14 max-w-2xl">
             <span
@@ -284,7 +282,10 @@ export default function IndustriesRecruit() {
               Industries We Recruit&nbsp;For
             </h2>
 
-            <p className="text-lg leading-relaxed" style={{ color: "var(--cw-ink-soft)" }}>
+            <p
+              className="text-lg leading-relaxed"
+              style={{ color: "var(--cw-ink-soft)" }}
+            >
               Ten high-demand sectors. Hundreds of verified employers. Pick your
               industry to see live openings abroad.
             </p>
@@ -292,7 +293,6 @@ export default function IndustriesRecruit() {
 
           {/* ── Main grid ───────────────────────────────────────── */}
           <div className="grid lg:grid-cols-[1fr_420px] gap-8 items-start">
-
             {/* LEFT — Industry cards grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {industries.map((ind, i) => {
@@ -309,9 +309,7 @@ export default function IndustriesRecruit() {
                       borderColor: isActive
                         ? "var(--cw-orange)"
                         : "var(--cw-line)",
-                      background: isActive
-                        ? "var(--cw-bg-warm)"
-                        : "#ffffff",
+                      background: isActive ? "var(--cw-bg-warm)" : "#ffffff",
                       boxShadow: isActive
                         ? "0 8px 24px rgba(234,91,12,0.12)"
                         : "none",
@@ -331,7 +329,9 @@ export default function IndustriesRecruit() {
                       >
                         <Icon
                           className="h-5 w-5"
-                          style={{ color: isActive ? "#fff" : "var(--cw-orange-deep)" }}
+                          style={{
+                            color: isActive ? "#fff" : "var(--cw-orange-deep)",
+                          }}
                           aria-hidden="true"
                         />
                       </div>
@@ -361,16 +361,28 @@ export default function IndustriesRecruit() {
                     </div>
 
                     {/* Destination */}
-                    <p className="text-xs" style={{ color: "var(--cw-ink-soft)" }}>
+                    <p
+                      className="text-xs"
+                      style={{ color: "var(--cw-ink-soft)" }}
+                    >
                       {ind.destination}
                     </p>
 
                     {/* Preview roles on hover (shown when active for mobile UX) */}
                     {isActive && (
-                      <div className="mt-4 space-y-1.5 border-t pt-4" style={{ borderColor: "var(--cw-line)" }}>
+                      <div
+                        className="mt-4 space-y-1.5 border-t pt-4"
+                        style={{ borderColor: "var(--cw-line)" }}
+                      >
                         {previewRoles.map((r) => (
-                          <div key={r.title} className="flex items-center justify-between">
-                            <span className="text-xs" style={{ color: "var(--cw-ink)" }}>
+                          <div
+                            key={r.title}
+                            className="flex items-center justify-between"
+                          >
+                            <span
+                              className="text-xs"
+                              style={{ color: "var(--cw-ink)" }}
+                            >
                               {r.title}
                             </span>
                             <span
@@ -382,7 +394,10 @@ export default function IndustriesRecruit() {
                           </div>
                         ))}
                         {industry.roles.length > 3 && (
-                          <p className="text-[10px]" style={{ color: "var(--cw-ink-soft)" }}>
+                          <p
+                            className="text-[10px]"
+                            style={{ color: "var(--cw-ink-soft)" }}
+                          >
                             +{industry.roles.length - 3} more roles →
                           </p>
                         )}
@@ -418,9 +433,7 @@ export default function IndustriesRecruit() {
                     >
                       Sector / Code
                     </p>
-                    <p
-                      className="display text-xl font-bold text-white leading-tight"
-                    >
+                    <p className="display text-xl font-bold text-white leading-tight">
                       {industry.title}
                       <span
                         className="mono ml-2 text-sm font-semibold"
@@ -435,7 +448,10 @@ export default function IndustriesRecruit() {
                     className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
                     style={{ background: "rgba(255,255,255,0.15)" }}
                   >
-                    <industry.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                    <industry.icon
+                      className="h-6 w-6 text-white"
+                      aria-hidden="true"
+                    />
                   </div>
                 </div>
 
@@ -448,7 +464,9 @@ export default function IndustriesRecruit() {
                     >
                       Destinations
                     </p>
-                    <p className="text-sm font-semibold text-white">{industry.destination}</p>
+                    <p className="text-sm font-semibold text-white">
+                      {industry.destination}
+                    </p>
                   </div>
 
                   <span
@@ -468,8 +486,20 @@ export default function IndustriesRecruit() {
                   aria-hidden="true"
                 />
                 {/* Notch circles */}
-                <div className="ir-notch" style={{ top: "calc(0px - 9px)", left: "12px" }} aria-hidden="true" />
-                <div className="ir-notch" style={{ top: "calc(0px - 9px)", right: "12px", left: "auto" }} aria-hidden="true" />
+                <div
+                  className="ir-notch"
+                  style={{ top: "calc(0px - 9px)", left: "12px" }}
+                  aria-hidden="true"
+                />
+                <div
+                  className="ir-notch"
+                  style={{
+                    top: "calc(0px - 9px)",
+                    right: "12px",
+                    left: "auto",
+                  }}
+                  aria-hidden="true"
+                />
 
                 <div className="pt-6 pb-2">
                   {/* Table header */}
@@ -501,7 +531,10 @@ export default function IndustriesRecruit() {
                       className="ir-role-row flex items-center justify-between px-6 py-3 border-b"
                       style={{ borderColor: "var(--cw-line)" }}
                     >
-                      <span className="text-sm" style={{ color: "var(--cw-ink)" }}>
+                      <span
+                        className="text-sm"
+                        style={{ color: "var(--cw-ink)" }}
+                      >
                         {role.title}
                       </span>
                       <span
@@ -559,10 +592,12 @@ export default function IndustriesRecruit() {
                         "--tw-ring-color": "var(--cw-orange)",
                       }}
                       onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.borderColor = "var(--cw-orange)";
+                        (e.currentTarget as HTMLElement).style.borderColor =
+                          "var(--cw-orange)";
                       }}
                       onMouseLeave={(e) => {
-                        (e.currentTarget as HTMLElement).style.borderColor = "var(--cw-line)";
+                        (e.currentTarget as HTMLElement).style.borderColor =
+                          "var(--cw-line)";
                       }}
                     >
                       <PhoneCall className="h-4 w-4" aria-hidden="true" />
@@ -586,13 +621,11 @@ export default function IndustriesRecruit() {
                 className="mono text-[11px] uppercase tracking-widest mb-3"
                 style={{ color: "rgba(255,255,255,0.65)" }}
               >
-                {industries.reduce((sum, ind) => sum + ind.roles.length, 0)}+ verified roles across{" "}
-                {industries.length} sectors
+                {industries.reduce((sum, ind) => sum + ind.roles.length, 0)}+
+                verified roles across {industries.length} sectors
               </p>
 
-              <h3
-                className="display text-3xl sm:text-4xl font-bold text-white mb-3"
-              >
+              <h3 className="display text-3xl sm:text-4xl font-bold text-white mb-3">
                 Your skills are in demand abroad.
               </h3>
 
@@ -603,14 +636,16 @@ export default function IndustriesRecruit() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Link
-                  href="/register"
+                  href="/jobs"
                   className="flex items-center gap-2 rounded-full bg-white text-sm font-semibold px-7 py-3 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 focus-visible:outline-none"
                   style={{ color: "var(--cw-orange-deep)" }}
                   onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLElement).style.background = "var(--cw-orange-light)")
+                    ((e.currentTarget as HTMLElement).style.background =
+                      "var(--cw-orange-light)")
                   }
                   onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLElement).style.background = "#ffffff")
+                    ((e.currentTarget as HTMLElement).style.background =
+                      "#ffffff")
                   }
                 >
                   Browse All Jobs
@@ -621,10 +656,12 @@ export default function IndustriesRecruit() {
                   href="/contact"
                   className="flex items-center gap-2 rounded-full border border-white/40 text-white text-sm font-semibold px-7 py-3 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-600 focus-visible:outline-none"
                   onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)")
+                    ((e.currentTarget as HTMLElement).style.background =
+                      "rgba(255,255,255,0.1)")
                   }
                   onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLElement).style.background = "transparent")
+                    ((e.currentTarget as HTMLElement).style.background =
+                      "transparent")
                   }
                 >
                   <PhoneCall className="h-4 w-4" aria-hidden="true" />
@@ -633,7 +670,6 @@ export default function IndustriesRecruit() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
     </>

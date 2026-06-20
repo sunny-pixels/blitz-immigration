@@ -12,20 +12,20 @@ import {
 } from "lucide-react";
 
 const services: { label: string; slug: string }[] = [
-  { label: "Overseas Recruitment",  slug: "overseas-recruitment" },
-  { label: "Work Visa Assistance",  slug: "work-visa-assistance" },
-  { label: "Resume Assessment",     slug: "resume-assessment" },
+  { label: "Overseas Recruitment", slug: "overseas-recruitment" },
+  { label: "Work Visa Assistance", slug: "work-visa-assistance" },
+  { label: "Resume Assessment", slug: "resume-assessment" },
   { label: "Interview Preparation", slug: "interview-preparation" },
   { label: "Documentation Support", slug: "documentation-support" },
-  { label: "Pre-Departure Guidance",slug: "pre-departure-guidance" },
+  { label: "Pre-Departure Guidance", slug: "pre-departure-guidance" },
 ];
 
 const resources: { label: string; slug: string }[] = [
-  { label: "Blog",                slug: "blog" },
-  { label: "Success Stories",     slug: "success-stories" },
-  { label: "FAQ",                 slug: "faq" },
+  { label: "Blog", slug: "blog" },
+  { label: "Success Stories", slug: "success-stories" },
+  { label: "FAQ", slug: "faq" },
   { label: "Recruitment Process", slug: "recruitment-process" },
-  { label: "Salary Guides",       slug: "salary-guides" },
+  { label: "Salary Guides", slug: "salary-guides" },
 ];
 
 export default function Navbar() {
@@ -46,11 +46,11 @@ export default function Navbar() {
   // On home: transparent until scrolled. On other pages: always white.
   const isDark = isHome && !scrolled;
 
-  const navText  = isDark ? "nav-link-light" : "nav-link-dark";
+  const navText = isDark ? "nav-link-light" : "nav-link-dark";
   const logoTitle = isDark ? "#ffffff" : "#1C1410";
-  const logoSub   = isDark ? "rgba(255,255,255,0.65)" : "#6B5D52";
+  const logoSub = isDark ? "rgba(255,255,255,0.65)" : "#6B5D52";
   const mobileBtn = isDark ? "mob-btn-light" : "mob-btn-dark";
-  const boxBg     = isDark ? "nav-box-top" : "nav-box-scrolled";
+  const boxBg = isDark ? "nav-box-top" : "nav-box-scrolled";
 
   return (
     <>
@@ -218,7 +218,7 @@ export default function Navbar() {
               { href: "/about", label: "About Us" },
               { href: "/jobs", label: "Jobs" },
               { href: "/countries", label: "Countries" },
-              { href: "/contact", label: "Contact" },
+              { href: "/contact", label: "Contact Us" },
             ].map(({ href, label }) => (
               <Link
                 key={href}
@@ -242,7 +242,11 @@ export default function Navbar() {
               </button>
               <div className="invisible absolute left-1/2 top-12 w-68 -translate-x-1/2 translate-y-3 rounded-2xl border border-[var(--cw-line)] bg-white p-2 shadow-lg opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                 {services.map((item) => (
-                  <Link key={item.slug} href={`/services/${item.slug}`} className="nav-dropdown-item">
+                  <Link
+                    key={item.slug}
+                    href={`/services/${item.slug}`}
+                    className="nav-dropdown-item"
+                  >
                     {item.label}
                   </Link>
                 ))}
@@ -262,7 +266,11 @@ export default function Navbar() {
               </button>
               <div className="invisible absolute left-1/2 top-12 w-56 -translate-x-1/2 translate-y-3 rounded-2xl border border-[var(--cw-line)] bg-white p-2 shadow-lg opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                 {resources.map((item) => (
-                  <Link key={item.slug} href={`/resources/${item.slug}`} className="nav-dropdown-item">
+                  <Link
+                    key={item.slug}
+                    href={`/resources/${item.slug}`}
+                    className="nav-dropdown-item"
+                  >
                     {item.label}
                   </Link>
                 ))}
@@ -272,7 +280,7 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden items-center lg:flex shrink-0">
-            <Link href="/apply" className="nav-cta">
+            <Link href="/contact" className="nav-cta">
               Apply Now
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </Link>
@@ -296,15 +304,19 @@ export default function Navbar() {
         {mobileOpen && (
           <div className="mt-2 mx-2 w-[calc(100%-1rem)] rounded-2xl border border-[var(--cw-line)] bg-white lg:hidden shadow-xl overflow-hidden">
             <div className="max-h-[calc(100vh-120px)] overflow-y-auto px-3 py-3">
-
               {/* Nav links — same order as desktop */}
               {[
                 { href: "/about", label: "About Us" },
                 { href: "/jobs", label: "Jobs" },
                 { href: "/countries", label: "Countries" },
-                { href: "/contact", label: "Contact" },
+                { href: "/contact", label: "Contact Us" },
               ].map(({ href, label }) => (
-                <Link key={href} href={href} className="mob-link" onClick={() => setMobileOpen(false)}>
+                <Link
+                  key={href}
+                  href={href}
+                  className="mob-link"
+                  onClick={() => setMobileOpen(false)}
+                >
                   {label}
                 </Link>
               ))}
@@ -313,16 +325,32 @@ export default function Navbar() {
               <div>
                 <button
                   onClick={() => setServicesOpen(!servicesOpen)}
-                  style={{ display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between" }}
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
                   className="mob-link"
                 >
                   <span>Services</span>
-                  <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} aria-hidden="true" />
+                  <ChevronDown
+                    className={`h-4 w-4 shrink-0 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
+                    aria-hidden="true"
+                  />
                 </button>
                 {servicesOpen && (
-                  <div className="ml-4 mt-1 space-y-0.5 border-l-2 pl-3" style={{ borderColor: "var(--cw-line)" }}>
+                  <div
+                    className="ml-4 mt-1 space-y-0.5 border-l-2 pl-3"
+                    style={{ borderColor: "var(--cw-line)" }}
+                  >
                     {services.map((item) => (
-                      <Link key={item.slug} href={`/services/${item.slug}`} className="mob-link py-2 text-xs block" onClick={() => setMobileOpen(false)}>
+                      <Link
+                        key={item.slug}
+                        href={`/services/${item.slug}`}
+                        className="mob-link py-2 text-xs block"
+                        onClick={() => setMobileOpen(false)}
+                      >
                         {item.label}
                       </Link>
                     ))}
@@ -334,16 +362,32 @@ export default function Navbar() {
               <div>
                 <button
                   onClick={() => setResourcesOpen(!resourcesOpen)}
-                  style={{ display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between" }}
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
                   className="mob-link"
                 >
                   <span>Resources</span>
-                  <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`} aria-hidden="true" />
+                  <ChevronDown
+                    className={`h-4 w-4 shrink-0 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`}
+                    aria-hidden="true"
+                  />
                 </button>
                 {resourcesOpen && (
-                  <div className="ml-4 mt-1 space-y-0.5 border-l-2 pl-3" style={{ borderColor: "var(--cw-line)" }}>
+                  <div
+                    className="ml-4 mt-1 space-y-0.5 border-l-2 pl-3"
+                    style={{ borderColor: "var(--cw-line)" }}
+                  >
                     {resources.map((item) => (
-                      <Link key={item.slug} href={`/resources/${item.slug}`} className="mob-link py-2 text-xs block" onClick={() => setMobileOpen(false)}>
+                      <Link
+                        key={item.slug}
+                        href={`/resources/${item.slug}`}
+                        className="mob-link py-2 text-xs block"
+                        onClick={() => setMobileOpen(false)}
+                      >
                         {item.label}
                       </Link>
                     ))}
@@ -352,15 +396,21 @@ export default function Navbar() {
               </div>
 
               {/* Divider */}
-              <div className="my-3 border-t" style={{ borderColor: "var(--cw-line)" }} />
+              <div
+                className="my-3 border-t"
+                style={{ borderColor: "var(--cw-line)" }}
+              />
 
               {/* CTA only — no WhatsApp */}
               <div className="pb-1">
-                <Link href="/apply" className="mob-cta" onClick={() => setMobileOpen(false)}>
+                <Link
+                  href="/contact"
+                  className="mob-cta"
+                  onClick={() => setMobileOpen(false)}
+                >
                   Apply Now
                 </Link>
               </div>
-
             </div>
           </div>
         )}

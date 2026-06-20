@@ -9,10 +9,10 @@ import {
   ShieldCheck,
   FileCheck2,
   CheckCircle2,
-//   Facebook,
-//   Instagram,
-//   Linkedin,
-//   Youtube,
+  //   Facebook,
+  //   Instagram,
+  //   Linkedin,
+  //   Youtube,
   MessageCircle,
   PlaneTakeoff,
 } from "lucide-react";
@@ -169,9 +169,7 @@ export default function Footer() {
               <div className="mt-6 space-y-4">
                 <div className="flex gap-3">
                   <Phone className="mt-0.5 h-5 w-5 text-[var(--cw-orange)]" />
-                  <span className="text-white/70">
-                    +91 98765 43210
-                  </span>
+                  <span className="text-white/70">+91 98765 43210</span>
                 </div>
 
                 <div className="flex gap-3">
@@ -211,13 +209,13 @@ export default function Footer() {
                 <div className="text-white/70">
                   Blitz Immigration
                   <br />
-                  402, Empire Business Hub
+                  B 420, 4th Floor, Shalin Square
                   <br />
-                  SG Highway
+                  Near Hathijan Circle, Vinzol
                   <br />
-                  Ahmedabad, Gujarat
+                  Ahmedabad, Gujarat – 382445
                   <br />
-                  India – 380054
+                  India
                 </div>
               </div>
             </div>
@@ -351,10 +349,10 @@ export default function Footer() {
 
               <div className="flex gap-3">
                 {[
-                //   Facebook,
-                //   Instagram,
-                //   Linkedin,
-                //   Youtube,
+                  //   Facebook,
+                  //   Instagram,
+                  //   Linkedin,
+                  //   Youtube,
                   MessageCircle,
                 ].map((Icon, i) => (
                   <Link
@@ -379,11 +377,11 @@ export default function Footer() {
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
 
               <p>
-                Blitz Immigration is committed to ethical recruitment
-                practices, transparency, and compliance with applicable laws
-                and regulations. All overseas employment opportunities are
-                subject to employer requirements, destination-country
-                regulations, and applicable approvals.
+                Blitz Immigration is committed to ethical recruitment practices,
+                transparency, and compliance with applicable laws and
+                regulations. All overseas employment opportunities are subject
+                to employer requirements, destination-country regulations, and
+                applicable approvals.
               </p>
             </div>
           </div>

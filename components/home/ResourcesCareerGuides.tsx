@@ -282,7 +282,7 @@ export default function ResourcesCareerGuides() {
                 and recruitment process walkthroughs.
               </p>
 
-              <Link
+              {/* <Link
                 href="/resources"
                 className="inline-flex items-center gap-2 rounded-full text-sm font-semibold text-white px-5 py-2.5 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
                 style={{
@@ -295,7 +295,7 @@ export default function ResourcesCareerGuides() {
               >
                 Visit Resources Centre
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
+              </Link> */}
             </div>
 
             {/* Right article list */}

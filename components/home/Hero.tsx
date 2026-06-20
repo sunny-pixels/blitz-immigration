@@ -38,7 +38,6 @@ export default function Hero() {
       `}</style>
 
       <div className="hero-root relative h-screen overflow-hidden">
-
         {/* Background image */}
         <Image
           src="/hero.png"
@@ -60,7 +59,6 @@ export default function Hero() {
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 max-w-7xl mx-auto">
-
           {/* Badge pill */}
           <div className="hero-body inline-flex items-center gap-2 border border-white/20 bg-white/10 text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-7 tracking-wide uppercase">
             <span
@@ -68,7 +66,8 @@ export default function Hero() {
               style={{ background: "var(--cw-orange)" }}
               aria-hidden="true"
             />
-            Licensed Global Recruiter · 1,200+ workers placed across 15+ countries
+            Licensed Global Recruiter · 1,200+ workers placed across 15+
+            countries
           </div>
 
           {/* Heading — Space Grotesk 700 */}
@@ -82,17 +81,16 @@ export default function Hero() {
 
           {/* Description — Inter 400 */}
           <p className="hero-body text-white/75 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-            We connect skilled and unskilled Indian workers with verified employers across
-            Europe, the UK, Canada, Australia, New Zealand, and beyond — in trades,
-            healthcare, construction, hospitality, and more.
+            We connect skilled and unskilled Indian workers with verified
+            employers across Europe, the UK, Canada, Australia, New Zealand, and
+            beyond — in trades, healthcare, construction, hospitality, and more.
           </p>
 
           {/* Buttons */}
           <div className="hero-body flex flex-col sm:flex-row gap-3 justify-center">
-
             {/* Primary — filled orange, rounded-full */}
             <Link
-              href="/workers"
+              href="/contact"
               className="hero-btn-primary inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-white"
             >
               Apply as a worker
@@ -101,13 +99,12 @@ export default function Hero() {
 
             {/* Secondary — ghost white, rounded-full */}
             <Link
-              href="/employers"
+              href="/contact"
               className="hero-btn-secondary inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-transparent px-7 py-3 text-sm font-semibold text-white hover:bg-white/10"
             >
               <PhoneCall className="h-4 w-4" aria-hidden="true" />
               Hire staff from India
             </Link>
-
           </div>
         </div>
       </div>

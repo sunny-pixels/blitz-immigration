@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://blitzimmigration.com"),
 
   title: {
-    default: "Blitz Immigration | Overseas Jobs & Global Recruitment from India",
+    default:
+      "Blitz Immigration | Overseas Jobs & Global Recruitment from India",
     template: "%s | Blitz Immigration",
   },
 
