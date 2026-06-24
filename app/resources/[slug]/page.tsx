@@ -1,4 +1,4 @@
-import ComingSoon from "@/components/layout/ComingSoon";
+﻿import ComingSoon from "@/components/layout/ComingSoon";
 
 const RESOURCE_META: Record<string, { title: string; description: string }> = {
   "blog": {
@@ -9,7 +9,7 @@ const RESOURCE_META: Record<string, { title: string; description: string }> = {
   "success-stories": {
     title: "Success Stories",
     description:
-      "Real stories from Indian workers who secured overseas employment through Blitz Immigration — in their own words.",
+      "Real stories from Indian workers who secured overseas employment through Blitz World Immigration — in their own words.",
   },
   "faq": {
     title: "FAQ",

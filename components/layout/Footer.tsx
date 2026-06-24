@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import {
@@ -21,10 +21,10 @@ const QUICK_LINKS = [
   { label: "Home", href: "/" },
   { label: "Jobs", href: "/jobs" },
   { label: "Countries", href: "/countries" },
-  { label: "Employers", href: "/employers" },
+  // { label: "Employers", href: "/employers" },
   { label: "About Us", href: "/about" },
-  { label: "Success Stories", href: "/success-stories" },
-  { label: "Resources & Guides", href: "/resources" },
+  // { label: "Success Stories", href: "/success-stories" },
+  // { label: "Resources & Guides", href: "/resources" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -107,7 +107,7 @@ export default function Footer() {
               </div>
 
               <h2 className="font-[Space_Grotesk] text-4xl font-bold leading-tight sm:text-5xl">
-                Blitz Immigration
+                Blitz World Immigration
               </h2>
 
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">
@@ -168,26 +168,26 @@ export default function Footer() {
 
               <div className="mt-6 space-y-4">
                 <div className="flex gap-3">
-                  <Phone className="mt-0.5 h-5 w-5 text-[var(--cw-orange)]" />
-                  <span className="text-white/70">+91 98765 43210</span>
+                  <Phone className="mt-0.5 h-5 w-5 shrink-0 text-[var(--cw-orange)]" />
+                  <span className="text-white/70">+91 79841 18340</span>
                 </div>
 
                 <div className="flex gap-3">
-                  <Mail className="mt-0.5 h-5 w-5 text-[var(--cw-orange)]" />
-                  <span className="text-white/70">
-                    info@blitzimmigration.com
+                  <Mail className="mt-0.5 h-5 w-5 shrink-0 text-[var(--cw-orange)]" />
+                  <span className="text-white/70 text-s">
+                    info@blitzworldimmigrations.com
                   </span>
                 </div>
 
                 <div className="flex gap-3">
-                  <Mail className="mt-0.5 h-5 w-5 text-[var(--cw-orange)]" />
-                  <span className="text-white/70">
-                    support@blitzimmigration.com
+                  <Mail className="mt-0.5 h-5 w-5 shrink-0 text-[var(--cw-orange)]" />
+                  <span className="text-white/70 text-s">
+                    support@blitzworldimmigrations.com
                   </span>
                 </div>
 
                 <div className="flex gap-3">
-                  <Clock3 className="mt-0.5 h-5 w-5 text-[var(--cw-orange)]" />
+                  <Clock3 className="mt-0.5 h-5 w-5 shrink-0 text-[var(--cw-orange)]" />
                   <span className="text-white/70">
                     Monday – Saturday
                     <br />
@@ -207,7 +207,7 @@ export default function Footer() {
                 <MapPin className="mt-0.5 h-5 w-5 text-[var(--cw-orange)]" />
 
                 <div className="text-white/70">
-                  Blitz Immigration
+                  Blitz World Immigration
                   <br />
                   B 420, 4th Floor, Shalin Square
                   <br />
@@ -270,7 +270,7 @@ export default function Footer() {
                     key={item}
                     className="text-white/70 transition hover:text-[var(--cw-orange)]"
                   >
-                    <Link href="/employers">{item}</Link>
+                    <Link href="/contact">{item}</Link>
                   </li>
                 ))}
               </ul>
@@ -278,7 +278,7 @@ export default function Footer() {
           </div>
 
           {/* Compliance */}
-          <div className="mt-14 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+          {/* <div className="mt-14 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
             <div className="flex items-center gap-3">
               <ShieldCheck className="h-6 w-6 text-[var(--cw-orange)]" />
 
@@ -314,7 +314,7 @@ export default function Footer() {
                 activities.
               </p>
             </div>
-          </div>
+          </div> */}
 
           {/* Legal + Social */}
           <div className="mt-14 flex flex-col gap-8 border-t border-white/10 pt-10 lg:flex-row lg:items-center lg:justify-between">
@@ -370,14 +370,14 @@ export default function Footer() {
           {/* Bottom Bar */}
           <div className="mt-12 border-t border-white/10 pt-8 text-center">
             <p className="font-medium text-white">
-              © 2026 Blitz Immigration. All Rights Reserved.
+              © 2026 Blitz World Immigration. All Rights Reserved.
             </p>
 
             <div className="mx-auto mt-4 max-w-5xl flex items-start justify-center gap-2 text-sm text-white/50">
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
 
               <p>
-                Blitz Immigration is committed to ethical recruitment practices,
+                Blitz World Immigration is committed to ethical recruitment practices,
                 transparency, and compliance with applicable laws and
                 regulations. All overseas employment opportunities are subject
                 to employer requirements, destination-country regulations, and

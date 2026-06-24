@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowUpRight, Building2 } from "lucide-react";
 
 /**
@@ -155,7 +155,7 @@ export default function AboutPage() {
       {/* ----------------------------------------------------------------- */}
       <div className="mx-auto max-w-3xl px-6 pt-28 sm:pt-36 lg:px-8">
         <span className="cw-mono text-xs font-medium uppercase tracking-wider text-[var(--cw-orange-deep)]">
-          About Blitz Immigration
+          About Blitz World Immigration
         </span>
 
         <h1 className="cw-display mt-4 text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
@@ -163,7 +163,7 @@ export default function AboutPage() {
         </h1>
 
         <p className="mt-6 text-lg leading-relaxed text-[var(--cw-ink)]">
-          Blitz Immigration is a leading overseas recruitment and manpower
+          Blitz World Immigration is a leading overseas recruitment and manpower
           placement company dedicated to helping skilled, semi-skilled, and
           professional workers from India build successful careers abroad.
         </p>
@@ -233,7 +233,7 @@ export default function AboutPage() {
               <h2 className="cw-display mt-1 text-2xl font-bold sm:text-3xl">Our Story</h2>
 
               <p className="mt-5 text-base leading-relaxed text-[var(--cw-ink-soft)]">
-                Blitz Immigration was founded with a vision to bridge the gap
+                Blitz World Immigration was founded with a vision to bridge the gap
                 between global workforce demand and India&apos;s highly skilled
                 talent pool.
               </p>
@@ -245,7 +245,7 @@ export default function AboutPage() {
                 financial growth.
               </p>
               <p className="mt-5 text-base leading-relaxed text-[var(--cw-ink-soft)]">
-                Recognizing this opportunity, Blitz Immigration was established
+                Recognizing this opportunity, Blitz World Immigration was established
                 to connect these two needs through{" "}
                 <strong className="font-semibold text-[var(--cw-ink)]">
                   ethical recruitment practices, employer verification,
@@ -260,7 +260,7 @@ export default function AboutPage() {
                 assisting businesses in sourcing reliable manpower from India.
               </p>
               <p className="mt-5 text-base leading-relaxed text-[var(--cw-ink-soft)]">
-                Today, Blitz Immigration continues to support workers and
+                Today, Blitz World Immigration continues to support workers and
                 employers alike through a recruitment process built on{" "}
                 <strong className="font-semibold text-[var(--cw-ink)]">
                   trust, transparency, and long-term success
@@ -275,7 +275,7 @@ export default function AboutPage() {
               <h2 className="cw-display mt-1 text-2xl font-bold sm:text-3xl">What We Do</h2>
 
               <p className="mt-5 text-base leading-relaxed text-[var(--cw-ink-soft)]">
-                Blitz Immigration specializes in international recruitment
+                Blitz World Immigration specializes in international recruitment
                 solutions for both workers and employers.
               </p>
               <p className="mt-5 text-base leading-relaxed text-[var(--cw-ink-soft)]">
@@ -307,7 +307,7 @@ export default function AboutPage() {
             <section id="why-workers-trust-us" className="scroll-mt-24 mt-14 border-t border-[var(--cw-line)] pt-10">
               <p className="cw-mono text-xs font-semibold text-[var(--cw-orange)]">03</p>
               <h2 className="cw-display mt-1 text-2xl font-bold sm:text-3xl">
-                Why Workers Trust Blitz Immigration
+                Why Workers Trust Blitz World Immigration
               </h2>
 
               <p className="mt-5 text-base leading-relaxed text-[var(--cw-ink-soft)]">
@@ -322,7 +322,7 @@ export default function AboutPage() {
                 ))}
               </ul>
               <p className="mt-6 text-base leading-relaxed text-[var(--cw-ink-soft)]">
-                At Blitz Immigration, we believe{" "}
+                At Blitz World Immigration, we believe{" "}
                 <strong className="font-semibold text-[var(--cw-ink)]">
                   trust is earned through transparency
                 </strong>
@@ -347,7 +347,7 @@ export default function AboutPage() {
               </h2>
 
               <p className="mt-5 text-base leading-relaxed text-[var(--cw-ink-soft)]">
-                Employers across the world choose Blitz Immigration because of
+                Employers across the world choose Blitz World Immigration because of
                 our commitment to quality recruitment and workforce
                 reliability. International hiring requires more than simply
                 filling vacancies — employers need candidates who possess the
@@ -411,7 +411,7 @@ export default function AboutPage() {
               </h2>
 
               <p className="mt-5 text-base leading-relaxed text-[var(--cw-ink-soft)]">
-                At Blitz Immigration, we believe international recruitment
+                At Blitz World Immigration, we believe international recruitment
                 should be conducted responsibly and ethically. We are committed
                 to:
               </p>
@@ -482,7 +482,7 @@ export default function AboutPage() {
               </p>
               <p className="mt-4 text-base leading-relaxed text-[var(--cw-ink-soft)]">
                 Whether you are seeking overseas employment or looking to hire
-                skilled manpower from India, Blitz Immigration is ready to help
+                skilled manpower from India, Blitz World Immigration is ready to help
                 you take the next step.
               </p>
 

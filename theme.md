@@ -1,4 +1,4 @@
-# Blitz Immigration — Section Design System
+﻿# Blitz World Immigration — Section Design System
 
 Reference doc for the "departures board / boarding pass" visual language used in `CountriesWorkers.tsx`, `HowItWorks.tsx`, and `SuccessStories.tsx`. Paste this into another IDE or LLM as context to keep new sections visually consistent with these three.
 

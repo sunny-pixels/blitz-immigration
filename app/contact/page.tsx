@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import Link from "next/link";
@@ -154,7 +154,7 @@ const FAQS: FAQItem[] = [
     id: "pay-to-apply",
     question: "Do I need to pay to apply?",
     answer:
-      "Applying for overseas job opportunities through Blitz Immigration is straightforward and transparent. Any costs, requirements, or employer-specific conditions are always communicated clearly before you proceed, so there are no surprises.",
+      "Applying for overseas job opportunities through Blitz World Immigration is straightforward and transparent. Any costs, requirements, or employer-specific conditions are always communicated clearly before you proceed, so there are no surprises.",
   },
   {
     id: "timeline",
@@ -172,7 +172,7 @@ const FAQS: FAQItem[] = [
     id: "countries",
     question: "Which countries do you recruit for?",
     answer:
-      "Blitz Immigration helps Indian workers access overseas employment opportunities across Europe, the UK, Canada, Australia, New Zealand, the Maldives, the Philippines, and other international destinations. Available countries and vacancies are updated regularly based on active recruitment campaigns and employer demand.",
+      "Blitz World Immigration helps Indian workers access overseas employment opportunities across Europe, the UK, Canada, Australia, New Zealand, the Maldives, the Philippines, and other international destinations. Available countries and vacancies are updated regularly based on active recruitment campaigns and employer demand.",
   },
   {
     id: "employer-request",
@@ -183,9 +183,9 @@ const FAQS: FAQItem[] = [
 ];
 
 const SEO_KEYWORDS_PARAGRAPHS = [
-  "Blitz Immigration is an MEA-licensed overseas recruitment company connecting Indian workers with verified international employers across the UAE, Saudi Arabia, Qatar, Kuwait, Oman, Europe, and Asia Pacific. We support both job seekers and employers through transparent recruitment processes, documentation assistance, and workforce solutions.",
+  "Blitz World Immigration is an MEA-licensed overseas recruitment company connecting Indian workers with verified international employers across the UAE, Saudi Arabia, Qatar, Kuwait, Oman, Europe, and Asia Pacific. We support both job seekers and employers through transparent recruitment processes, documentation assistance, and workforce solutions.",
   "As a leading overseas recruitment agency in India, we work with candidates from across the country while operating from our registered office in Ahmedabad, Gujarat. Whether you're searching for a trusted overseas jobs consultant to guide your application or an established manpower recruitment partner in Ahmedabad to manage end-to-end documentation, our recruitment team is built to support you at every stage.",
-  "For businesses abroad, Blitz Immigration offers a reliable way to hire Indian workers across construction, healthcare, hospitality, manufacturing, logistics, and skilled trades. As an international recruitment agency with verified employer partners across 15+ destination countries, we combine candidate screening, compliance, and pre-departure support to help organizations build dependable overseas workforces.",
+  "For businesses abroad, Blitz World Immigration offers a reliable way to hire Indian workers across construction, healthcare, hospitality, manufacturing, logistics, and skilled trades. As an international recruitment agency with verified employer partners across 15+ destination countries, we combine candidate screening, compliance, and pre-departure support to help organizations build dependable overseas workforces.",
 ];
 
 // ---------------------------------------------------------------------------
@@ -746,7 +746,7 @@ export default function ContactPage() {
 
           <div className="overflow-hidden rounded-2xl border border-[var(--cw-line)]">
             <iframe
-              title="Blitz Immigration office location"
+              title="Blitz World Immigration office location"
               src={MAP_EMBED_SRC}
               width="100%"
               height="100%"
@@ -779,7 +779,7 @@ export default function ContactPage() {
             </h2>
             <p className="mt-4 text-base leading-relaxed text-white/80">
               Whether you&apos;re pursuing a career abroad or searching for
-              qualified talent from India, Blitz Immigration is ready to assist.
+              qualified talent from India, Blitz World Immigration is ready to assist.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link

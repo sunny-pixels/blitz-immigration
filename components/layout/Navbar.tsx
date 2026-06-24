@@ -207,7 +207,7 @@ export default function Navbar() {
                 className="nav-logo-sub text-[11px] uppercase tracking-wider mt-0.5 transition-colors duration-300"
                 style={{ color: logoSub }}
               >
-                Immigration
+                World Immigration
               </p>
             </div>
           </Link>

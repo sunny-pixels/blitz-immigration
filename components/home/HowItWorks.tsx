@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
   Search,
@@ -146,7 +146,7 @@ export default function HowItWorks() {
           </h2>
 
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--cw-ink-soft)]">
-            Finding an overseas job through Blitz Immigration is simple, transparent,
+            Finding an overseas job through Blitz World Immigration is simple, transparent,
             and designed to support you at every stage of the recruitment process.
           </p>
 

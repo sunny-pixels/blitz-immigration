@@ -1,4 +1,4 @@
-import { Quote, Users, PlayCircle } from "lucide-react";
+﻿import { Quote, Users, PlayCircle } from "lucide-react";
 
 /**
  * SuccessStories
@@ -37,7 +37,7 @@ const TESTIMONIALS: Testimonial[] = [
     code: "FRA",
     flag: "🇩🇪",
     quote:
-      "Blitz Immigration guided me through every step of the recruitment process. Within a few months, I secured a position in Germany with a reputable company. The process was smooth, transparent, and professional.",
+      "Blitz World Immigration guided me through every step of the recruitment process. Within a few months, I secured a position in Germany with a reputable company. The process was smooth, transparent, and professional.",
   },
   {
     id: "arif",
@@ -47,7 +47,7 @@ const TESTIMONIALS: Testimonial[] = [
     code: "LHR",
     flag: "🇬🇧",
     quote:
-      "I was looking for a stable overseas opportunity and found the perfect role through Blitz Immigration. The team kept me informed throughout the process and helped me prepare all required documents.",
+      "I was looking for a stable overseas opportunity and found the perfect role through Blitz World Immigration. The team kept me informed throughout the process and helped me prepare all required documents.",
   },
   {
     id: "suresh",
@@ -57,7 +57,7 @@ const TESTIMONIALS: Testimonial[] = [
     code: "AMS",
     flag: "🇳🇱",
     quote:
-      "Moving abroad for work was a big decision for my family. Blitz Immigration made the process simple and answered all my questions. Today I have a secure job and better income opportunities.",
+      "Moving abroad for work was a big decision for my family. Blitz World Immigration made the process simple and answered all my questions. Today I have a secure job and better income opportunities.",
   },
   {
     id: "deepak",
@@ -87,7 +87,7 @@ const TESTIMONIALS: Testimonial[] = [
     code: "MLE",
     flag: "🇲🇻",
     quote:
-      "Working abroad has helped me grow professionally and financially. I am thankful to Blitz Immigration for connecting me with a trusted employer.",
+      "Working abroad has helped me grow professionally and financially. I am thankful to Blitz World Immigration for connecting me with a trusted employer.",
   },
 ];
 
@@ -146,7 +146,7 @@ export default function SuccessStories() {
           </h2>
 
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--cw-ink-soft)]">
-            Thousands of workers have trusted Blitz Immigration to help them build
+            Thousands of workers have trusted Blitz World Immigration to help them build
             successful careers overseas. Here are a few stories from candidates who
             secured international opportunities through our recruitment network.
           </p>
@@ -227,7 +227,7 @@ export default function SuccessStories() {
             </h3>
             <p className="mt-3 text-[var(--cw-ink-soft)]">
               Watch authentic experiences from workers who successfully secured
-              overseas employment through Blitz Immigration. Video testimonials
+              overseas employment through Blitz World Immigration. Video testimonials
               provide valuable insight into the recruitment journey, workplace
               experience, and life abroad.
             </p>

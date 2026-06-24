@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -59,15 +59,15 @@ const CATEGORIES: FAQCategory[] = [
     items: [
       {
         id: "pay-to-apply",
-        question: "Do I have to pay to apply for jobs through Blitz Immigration?",
+        question: "Do I have to pay to apply for jobs through Blitz World Immigration?",
         answer:
-          "Applying for overseas job opportunities through Blitz Immigration is straightforward and transparent. Any costs, requirements, or employer-specific conditions are always communicated clearly before you proceed, so there are no surprises.",
+          "Applying for overseas job opportunities through Blitz World Immigration is straightforward and transparent. Any costs, requirements, or employer-specific conditions are always communicated clearly before you proceed, so there are no surprises.",
       },
       {
         id: "genuine-jobs",
         question: "How do I know the job opportunity is genuine?",
         answer:
-          "Blitz Immigration works with verified employers and recruitment partners to connect candidates with legitimate overseas opportunities. Before moving forward, you'll receive information about the employer, job role, employment terms, and recruitment process so you can make an informed decision.",
+          "Blitz World Immigration works with verified employers and recruitment partners to connect candidates with legitimate overseas opportunities. Before moving forward, you'll receive information about the employer, job role, employment terms, and recruitment process so you can make an informed decision.",
       },
     ],
   },
@@ -150,13 +150,13 @@ const CATEGORIES: FAQCategory[] = [
       },
       {
         id: "pre-departure",
-        question: "Will Blitz Immigration assist with documentation and pre-departure guidance?",
+        question: "Will Blitz World Immigration assist with documentation and pre-departure guidance?",
         answer:
           "Yes. Successful candidates receive guidance on required documentation, employment paperwork, visa-related procedures, medical requirements, and pre-departure preparation, based on what the employer and destination country require.",
       },
       {
         id: "countries",
-        question: "Which countries does Blitz Immigration recruit for?",
+        question: "Which countries does Blitz World Immigration recruit for?",
         answer:
           "We regularly connect Indian workers with opportunities across Europe, the UK, Canada, Australia, New Zealand, and other international destinations. Available countries and job openings may change based on employer demand and active recruitment campaigns.",
       },

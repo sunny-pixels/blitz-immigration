@@ -1,4 +1,4 @@
-# Blitz Immigration — Product Requirements Document
+﻿# Blitz World Immigration — Product Requirements Document
 
 **Version**: 1.0  
 **Date**: June 2026  
@@ -8,7 +8,7 @@
 
 ## 1. Product Overview
 
-Blitz Immigration is an overseas recruitment and manpower placement platform connecting skilled Indian workers with verified international employers across the Middle East, Europe, Asia Pacific, and beyond. The platform serves two primary audiences simultaneously: job seekers from India looking for overseas employment, and employers abroad who need to hire vetted Indian talent.
+Blitz World Immigration is an overseas recruitment and manpower placement platform connecting skilled Indian workers with verified international employers across the Middle East, Europe, Asia Pacific, and beyond. The platform serves two primary audiences simultaneously: job seekers from India looking for overseas employment, and employers abroad who need to hire vetted Indian talent.
 
 The product is currently a marketing and lead-generation website built in Next.js. The homepage is fully built; all other routes are scaffolded but empty.
 
@@ -17,7 +17,7 @@ The product is currently a marketing and lead-generation website built in Next.j
 ## 2. Business Context
 
 ### Company Profile
-- **Registered**: Blitz Immigration, 402 Empire Business Hub, SG Highway, Ahmedabad, Gujarat 380054, India
+- **Registered**: Blitz World Immigration, 402 Empire Business Hub, SG Highway, Ahmedabad, Gujarat 380054, India
 - **License**: MEA Licensed Recruiter (Ministry of External Affairs, India) — the statutory license required for Indian agencies sending workers abroad
 - **Registration**: BLZ-2026-78421
 - **GST**: 24AABCB1234K1ZP
@@ -356,7 +356,7 @@ Interactive: click a sector card on the left → boarding-pass detail panel appe
 - Compliance block: Registration, License, GST numbers + verification disclaimer
 - Legal links: Privacy Policy, Terms & Conditions, Cookie Policy, Disclaimer, Refund Policy
 - Social: WhatsApp (others commented out — to be added)
-- Copyright: © 2026 Blitz Immigration
+- Copyright: © 2026 Blitz World Immigration
 
 ---
 
