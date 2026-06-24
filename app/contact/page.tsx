@@ -59,12 +59,12 @@ const CONTACT_INFO = [
   {
     Icon: Phone,
     label: "Phone",
-    lines: ["+91 98765 43210"],
+    lines: ["+91 79841 18340"],
   },
   {
     Icon: Mail,
     label: "Email",
-    lines: ["info@blitzimmigration.com", "support@blitzimmigration.com"],
+    lines: ["info@blitzworldimmigrations.com", "support@blitzworldimmigrations.com"],
   },
   {
     Icon: Clock,
